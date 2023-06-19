@@ -12,7 +12,7 @@ from khach_hang
 where datediff(now(), ngay_sinh)/365 >=18 and datediff(now(), ngay_sinh)/365 <=50 
 and dia_chi like "%Quảng Trị%" or dia_chi like "%Đà Nẵng%";
 
-select khach_hang.ma_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach, count(*) as so_lan_dat
+select khach_hang.ma_khach_hang, khach_hang.ho_ten, loai_khach.ten_loai_khach, count(*) as 'so_lan_dat'
 from khach_hang
 join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach
 join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang

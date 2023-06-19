@@ -54,8 +54,10 @@ FROM
     khach_hang k;
    
    -- cách 3
- -- không nghĩ đc cách 3
- 
+  select k.ho_ten
+  from loai_khach lk 
+ right join khach_hang k on lk.ma_loai_khach = k.ma_khach_hang
+ group by k.ho_ten;
  
  -- 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với 
  -- mỗi tháng trong năm 2021 

@@ -30,7 +30,7 @@ SELECT
     hop_dong.ngay_ket_thuc,
     dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong * dich_vu_di_kem.gia AS tong_tien
 FROM
-    khach_hang AS k
+    khach_hang  k
         LEFT JOIN
     loai_khach ON k.ma_loai_khach = loai_khach.ma_loai_khach
         LEFT JOIN
@@ -41,7 +41,6 @@ FROM
     hop_dong_chi_tiet ON hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
         LEFT JOIN
     dich_vu_di_kem ON hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem;
-
 
 
 

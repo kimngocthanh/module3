@@ -65,7 +65,7 @@ join dich_vu d on h.ma_dich_vu = d.ma_dich_vu
 join loai_dich_vu ldv on d.ma_loai_dich_vu = ldv.ma_loai_dich_vu
 group by  dvdk.ten_dich_vu_di_kem
  HAVING COUNT(*) = 1;
- 
+ drop view so_lan_su_dung;
  select  h.ma_hop_dong, ldv.ten_loai_dich_vu, dvdk.ten_dich_vu_di_kem, slsd.so_lan_su_dung
  from so_lan_su_dung slsd
  join dich_vu_di_kem dvdk on slsd.ten_dich_vu_di_kem = dvdk.ten_dich_vu_di_kem

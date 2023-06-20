@@ -53,10 +53,6 @@ FROM
          
         
 
-
-
-
-
 -- 14 	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 -- Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung 
 -- (được tính dựa trên việc count các ma_dich_vu_di_kem).
@@ -92,8 +88,9 @@ from nhan_vien nv
 join hop_dong h on nv.ma_nhan_vien = h.ma_nhan_vien 
 join trinh_do td on nv.ma_trinh_do = td.ma_trinh_do
 join bo_phan on nv.ma_bo_phan = bo_phan.ma_bo_phan
+where (year(h.ngay_lam_hop_dong) between 2020 and 2021)
 group by nv.ma_nhan_vien
-having count(h.ma_hop_dong) <4 
+having count(h.ma_hop_dong) <4 ;
 
 
 

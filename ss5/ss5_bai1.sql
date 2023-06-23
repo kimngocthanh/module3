@@ -38,19 +38,20 @@ DELIMITER ;
 call get_all();
 DELIMITER //
 CREATE PROCEDURE add_product(
-in product_code VARCHAR(45),
-in product_name VARCHAR(45),
-in product_price DOUBLE,
-in product_amount int,
-in product_description VARCHAR(45),
-in product_status VARCHAR(45)
+in new_product_id int,
+in new_product_code VARCHAR(45),
+in new_product_name VARCHAR(45),
+in new_product_price DOUBLE,
+in new_product_amount int,
+in new_product_description VARCHAR(45),
+in new_product_status VARCHAR(45)
 )
 BEGIN
-    INSERT INTO product (product_code, product_name, product_price,product_amount, product_description, product_status)
-    VALUES (new_product_code, new_product_name, new_product_price, new_product_amount, new_product_description,new_product_status);
+    INSERT INTO products (id,product_code, product_name, product_price,product_amount, product_description, product_status)
+    VALUES (new_product_id,new_product_code, new_product_name, new_product_price, new_product_amount, new_product_description,new_product_status);
 END //
 DELIMITER ;
-call add_new_product(3, 'pr3','rock start',50000,5,'okeeee','okeeee');
+call add_product( 3,'pr3','rock start',50000,5,'okeeee','okeeee');
 -- 
 delimiter //
 CREATE PROCEDURE update_id_product(

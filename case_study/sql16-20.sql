@@ -27,12 +27,13 @@ select * from khach_hang
 join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach;
 
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
-SET FOREIGN_KEY_CHECKS=0;
-delete k
-from khach_hang k
-join hop_dong h on k.ma_khach_hang = h.ma_khach_hang
-where year(h.ngay_lam_hop_dong) <2021; 
- SET FOREIGN_KEY_CHECKS=1;
+SET FOREIGN_KEY_CHECKS=0 ;
+DELETE k FROM khach_hang k
+        JOIN
+    hop_dong h ON k.ma_khach_hang = h.ma_khach_hang 
+WHERE
+    YEAR(h.ngay_lam_hop_dong) < 2021 ; 
+ SET FOREIGN_KEY_CHECKS=1 ;
  select * from khach_hang;
 
 
@@ -41,17 +42,11 @@ where year(h.ngay_lam_hop_dong) <2021;
 SET SQL_SAFE_UPDATES = 0;
 update dich_vu_di_kem dvdk 
 join hop_dong_chi_tiet hct on dvdk.ma_dich_vu_di_kem = hct.ma_dich_vu_di_kem
-join hop_dong h on hct.ma_hop_dong = h.ma_hop_dong
 set dvdk.gia = dvdk.gia* 2
-where hct.ma_dich_vu_di_kem  IN (
-    SELECT ma_dich_vu_di_kem
-    FROM hop_dong_chi_tiet 
-    where year(h.ngay_lam_hop_dong) =2020
-    GROUP BY ma_dich_vu_di_kem
-    HAVING COUNT(*) > 10
-);
+where hct.so_luong>10;
 SET SQL_SAFE_UPDATES = 1;
-select * from dich_vu_di_kem;
+select *
+ from dich_vu_di_kem dvdk ;
 
 
 -- 20.	Hiển thị thông tin của tất cả các nhân viên và khách hàng 

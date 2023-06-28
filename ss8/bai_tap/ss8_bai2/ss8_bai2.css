@@ -1,0 +1,27 @@
+.background {
+    background-image: url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-pro-9_multi-color_Pride-english?scl=1") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    width: 100%;
+}
+.text {
+    max-inline-size: 40%;
+    padding-top: 100px;
+    padding-left: 100px;
+}
+.col-lg-2{
+    padding-left: 10px;
+}
+.row_link{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#text {
+    padding-left: 50px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+

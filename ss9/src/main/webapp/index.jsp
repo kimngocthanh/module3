@@ -14,7 +14,6 @@
   <input type="text" id="discountPercent" name="discountPercent">
   <input type="submit" name="calculator" value="sum">
 
-
 </form>
 
 </body>

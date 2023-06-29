@@ -1,0 +1,26 @@
+.col-2{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.row_content{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+.col-3 img{
+    max-inline-size: 100%;
+}
+.col-9 img{
+    padding-left: 5%;
+    max-inline-size: 90%;
+}
+p{
+    max-font-size: 90%;
+    padding-left: 5%;
+}
+
+h4{
+    padding-left: 5%;
+}

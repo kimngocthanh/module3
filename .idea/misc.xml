@@ -3,6 +3,13 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/demo" />
+    <file type="web" url="file://$PROJECT_DIR$/ss10_bai_tap01" />
+    <file type="web" url="file://$PROJECT_DIR$/ss10_bai_tap1" />
+    <file type="web" url="file://$PROJECT_DIR$/ss10_bai_tap_1" />
+    <file type="web" url="file://$PROJECT_DIR$/ss10_thuc_hanh" />
+    <file type="web" url="file://$PROJECT_DIR$/ss10_thuc_hanh1" />
+    <file type="web" url="file://$PROJECT_DIR$/ss10_thuc_hanh2" />
+    <file type="web" url="file://$PROJECT_DIR$/ss10_thuc_hanh_1" />
     <file type="web" url="file://$PROJECT_DIR$/ss9" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">

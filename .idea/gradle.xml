@@ -13,6 +13,62 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ss10" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ss10" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ss10_bai_tap01" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ss10_bai_tap01" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ss10_bai_tap1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ss10_bai_tap1" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ss10_bai_tap_1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ss10_bai_tap_1" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ss10_thuc_hanh" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ss10_thuc_hanh" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ss10_thuc_hanh1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ss10_thuc_hanh1" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ss10_thuc_hanh2" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ss10_thuc_hanh2" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/ss9" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">

@@ -3,6 +3,9 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
+      <module name="ss10" target="1.8" />
+      <module name="ss10_bai_tap_1" target="1.8" />
+      <module name="ss10_thuc_hanh1" target="1.8" />
       <module name="ss9" target="1.8" />
     </bytecodeTargetLevel>
   </component>

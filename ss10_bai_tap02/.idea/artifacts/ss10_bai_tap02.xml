@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="ss10_bai_tap02">
+    <output-path>$PROJECT_DIR$/out/artifacts/ss10_bai_tap02</output-path>
+    <root id="root">
+      <element id="archive" name="ss10_bai_tap02.jar">
+        <element id="module-output" name="ss10_bai_tap02" />
+      </element>
+    </root>
+  </artifact>
+</component>

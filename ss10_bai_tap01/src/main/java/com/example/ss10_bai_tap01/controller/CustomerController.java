@@ -18,7 +18,7 @@ public class CustomerController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Customer> customerList =  customerService.display();
         request.setAttribute("customerList",customerList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("customer_show.jsp");
         requestDispatcher.forward(request,response);
     }
 

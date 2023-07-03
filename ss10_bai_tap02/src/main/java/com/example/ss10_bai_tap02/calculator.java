@@ -15,31 +15,32 @@ public class calculator extends HttpServlet {
         String subtend = request.getParameter("subtend");
         double result = 0;
         PrintWriter out = response.getWriter();
-        switch (subtend){
+        switch (subtend) {
             case "total":
-                result = firstNumber+secondNumber;
+                result = firstNumber + secondNumber;
                 break;
             case "sub":
-                result = firstNumber-secondNumber;
+                result = firstNumber - secondNumber;
                 break;
             case "core":
-                result = firstNumber*secondNumber;
+                result = firstNumber * secondNumber;
                 break;
             case "div":
                 try {
-                    if(secondNumber==0){
-                        out.println("ko thể chia cho 0");
+                    if (secondNumber == 0) {
+                        throw new Exception();
+                    } else {
+                        result = firstNumber / secondNumber;
                     }
-                    result = firstNumber/secondNumber;
-                } catch (RuntimeException e) {
-                    throw new RuntimeException(e.getMessage());
+                } catch (Exception e) {
+                    out.println("ko thể chia cho 0");
                 }
                 break;
         }
 
         request.setAttribute("result", result);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("calculatorResult.jsp");
-        requestDispatcher.forward(request,response);
+        requestDispatcher.forward(request, response);
     }
 
     @Override

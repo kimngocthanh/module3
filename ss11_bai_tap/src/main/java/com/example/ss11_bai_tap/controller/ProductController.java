@@ -32,21 +32,39 @@ public class ProductController extends HttpServlet {
             case "edit":
                 showEdit(request, response);
                 break;
+            case "view":
+                showView(request, response);
+                break;
+            case "search":
+                showSearch(request,response);
+                break;
             default:
                 listProduct(request, response);
                 break;
         }
     }
 
-    private void showEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        double price = Double.parseDouble(request.getParameter("priceProduct"));
+    private void showSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/search.jsp");
+        requestDispatcher.forward(request,response);
+    }
+
+    private void showView(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        String describeProduct = request.getParameter("describeProduct");
-        String producerProduct = request.getParameter("producerProduct");
-        String nameProduct = request.getParameter("nameProduct");
-        Product product = new Product(id, nameProduct, price, describeProduct, producerProduct);
         request.setAttribute("id", id);
-        request.setAttribute("product", product);
+        for (Integer i : productService.display().keySet()) {
+            if (i == id) {
+                request.setAttribute("product", productService.display().get(i));
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view.jsp");
+                requestDispatcher.forward(request, response);
+            }
+        }
+
+    }
+
+    private void showEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        request.setAttribute("id", id);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/edit.jsp");
         requestDispatcher.forward(request, response);
     }
@@ -88,7 +106,18 @@ public class ProductController extends HttpServlet {
             case "edit":
                 editProduct(request, response);
                 break;
+            case "search":
+                searchProduct(request,response);
+                break;
         }
+    }
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String nameProduct = request.getParameter("nameProduct");
+        List<Product> products = productService.displayProduct(nameProduct);
+        request.setAttribute("products",products);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/search.jsp");
+        requestDispatcher.forward(request,response);
     }
 
     private void editProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {

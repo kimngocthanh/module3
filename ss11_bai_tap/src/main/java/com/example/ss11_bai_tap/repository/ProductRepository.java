@@ -2,7 +2,9 @@ package com.example.ss11_bai_tap.repository;
 
 import com.example.ss11_bai_tap.model.Product;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProductRepository implements IProductRepository{
@@ -40,6 +42,17 @@ public class ProductRepository implements IProductRepository{
     public void edit(int id, Product product) {
         productMap.remove(id);
         productMap.put(id,product);
+    }
+
+    @Override
+    public List<Product> display(String nameProduct) {
+        List<Product> productList = new ArrayList<>();
+        for (Product p: productMap.values()) {
+            if(p.getNameProduct().contains(nameProduct)){
+                productList.add(p);
+            }
+        }
+        return productList;
     }
 
 

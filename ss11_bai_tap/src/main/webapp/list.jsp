@@ -15,6 +15,9 @@
 <p>
     <a href="/ProductController?action=showCreate">Thêm mới Product</a>
 </p>
+<p>
+    <a href="/ProductController?action=search">Tìm kiếm theo tên</a>
+</p>
 <table border="1">
     <tr>
         <th>Tên sản phẩm</th>
@@ -26,14 +29,15 @@
     </tr>
     <c:forEach items="${productList}" var="p">
         <tr>
-            <td><c:out value="${p.getNameProduct()}"/></td>
+            <td><a href="/ProductController?action=view&id=${p.getIdProduct()}">${p.getNameProduct()} </a></td>
             <td><c:out value="${p.getPriceProduct()}"/></td>
             <td><c:out value="${p.getDescribeProduct()}"/></td>
             <td><c:out value="${p.getProducerProduct()}"/></td>
-            <td><a href="/ProductController?action=edit&id=${p.getIdProduct()}">sửa</a> </td>
-            <td><a href="/ProductController?action=delete&id=${p.getIdProduct()}">xoá</a> </td>
+            <td><a href="/ProductController?action=edit&id=${p.getIdProduct()}">sửa</a></td>
+            <td><a href="/ProductController?action=delete&id=${p.getIdProduct()}">xoá</a></td>
         </tr>
     </c:forEach>
 </table>
+
 </body>
 </html>

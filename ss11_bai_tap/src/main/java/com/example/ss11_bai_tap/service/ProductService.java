@@ -4,6 +4,7 @@ import com.example.ss11_bai_tap.model.Product;
 import com.example.ss11_bai_tap.repository.IProductRepository;
 import com.example.ss11_bai_tap.repository.ProductRepository;
 
+import java.util.List;
 import java.util.Map;
 
 public class ProductService implements IProductService{
@@ -26,5 +27,10 @@ public class ProductService implements IProductService{
     @Override
     public void editProduct(int id, Product product) {
         productRepository.edit(id,product);
+    }
+
+    @Override
+    public List<Product> displayProduct(String nameProduct) {
+        return productRepository.display(nameProduct);
     }
 }

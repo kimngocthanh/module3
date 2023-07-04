@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface IProductRepository {
-    Map<Integer, Product> display();
+    Map<Integer, Product> displaySearch();
     void add(int id,Product product);
     void delete(int id);
     void edit(int id,Product product);
-    List<Product> display(String nameProduct);
+    List<Product> displaySearch(String nameProduct);
 }

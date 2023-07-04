@@ -11,7 +11,7 @@ public class ProductService implements IProductService{
     private final IProductRepository productRepository = new ProductRepository();
     @Override
     public Map<Integer, Product> display() {
-        return productRepository.display();
+        return productRepository.displaySearch();
     }
 
     @Override
@@ -31,6 +31,6 @@ public class ProductService implements IProductService{
 
     @Override
     public List<Product> displayProduct(String nameProduct) {
-        return productRepository.display(nameProduct);
+        return productRepository.displaySearch(nameProduct);
     }
 }

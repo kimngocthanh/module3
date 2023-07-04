@@ -24,7 +24,7 @@ public class ProductRepository implements IProductRepository{
         productMap.put(6,product6);
     }
     @Override
-    public Map<Integer, Product> display() {
+    public Map<Integer, Product> displaySearch() {
         return productMap;
     }
 
@@ -45,7 +45,7 @@ public class ProductRepository implements IProductRepository{
     }
 
     @Override
-    public List<Product> display(String nameProduct) {
+    public List<Product> displaySearch(String nameProduct) {
         List<Product> productList = new ArrayList<>();
         for (Product p: productMap.values()) {
             if(p.getNameProduct().contains(nameProduct)){

@@ -51,7 +51,6 @@ public class ProductController extends HttpServlet {
 
     private void showView(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        request.setAttribute("id", id);
         for (Integer i : productService.display().keySet()) {
             if (i == id) {
                 request.setAttribute("product", productService.display().get(i));

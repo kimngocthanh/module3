@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <td><c:out value="${c.getName()}"/></td>
-                <td><c:out value="${c.geEmail()}"/></td>
+                <td><c:out value="${c.getEmail()}"/></td>
                 <td><c:out value="${c.getCountry()}"/></td>
             </tr>
         </c:forEach>

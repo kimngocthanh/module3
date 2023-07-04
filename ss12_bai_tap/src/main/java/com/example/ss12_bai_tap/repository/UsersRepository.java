@@ -89,7 +89,7 @@ public class UsersRepository implements IUsersRepository {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH);
             preparedStatement.setString(1,"%"+country+"%");
-            ResultSet resultSet = preparedStatement.executeQuery(SEARCH);
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");

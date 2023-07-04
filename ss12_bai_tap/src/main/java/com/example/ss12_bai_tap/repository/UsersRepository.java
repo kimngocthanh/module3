@@ -13,8 +13,8 @@ public class UsersRepository implements IUsersRepository {
     public static String INSERT = "INSERT into users(name,email,country) VALUES (?,?,?)";
     public static String UPDATE = "UPDATE users Set name=?, email=?, country=? WHERE id=?;";
     public static String DELETE = "DELETE from users WHERE id = ?";
-    public static String SEARCH = "SELECT * FROM users\n" +
-            "WHERE country like ? ;";
+    public static String SEARCH = "SELECT * FROM users WHERE country like ? ;";
+    public static String SORT = "SELECT * FROM users ORDER BY name ;";
 
     @Override
     public Map<Integer, Users> display() {
@@ -88,13 +88,36 @@ public class UsersRepository implements IUsersRepository {
         Connection connection = BaseRepository.getConnection();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH);
-            preparedStatement.setString(1, country);
+            preparedStatement.setString(1,"%"+country+"%");
             ResultSet resultSet = preparedStatement.executeQuery(SEARCH);
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 String email = resultSet.getString("email");
                 users = new Users(id,name,email,country);
+                usersList.add(users);
+            }
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return usersList;
+    }
+
+    @Override
+    public List<Users> sort() {
+        List<Users> usersList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        Users users;
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(SORT);
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                users = new Users(id, name, email, country);
                 usersList.add(users);
             }
             connection.close();

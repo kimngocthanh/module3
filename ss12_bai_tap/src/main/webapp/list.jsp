@@ -18,6 +18,9 @@
 <p>
     <a href="/UsersController?action=search">Tìm kiếm theo địa chỉ</a>
 </p>
+<p>
+    <a href="/UsersController?action=sort">Tìm sắp xếp theo tên</a>
+</p>
 <table border="1">
     <tr>
         <th>Tên</th>

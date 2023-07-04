@@ -33,10 +33,20 @@ public class UsersController extends HttpServlet {
             case "search":
                 showSearch(request,response);
                 break;
+            case "sort":
+                showSort(request,response);
+                break;
             default:
                 viewList(request,response);
                 break;
         }
+    }
+
+    private void showSort(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Users> usersList = usersService.sort();
+        request.setAttribute("usersList",usersList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/sort.jsp");
+        requestDispatcher.forward(request,response);
     }
 
     private void showSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -91,10 +101,13 @@ public class UsersController extends HttpServlet {
         }
     }
 
-    private void searchUsers(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    private void searchUsers(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String country = request.getParameter("country");
-        usersService.search(country);
-        response.sendRedirect("/UserController");
+        List<Users> usersList = usersService.search(country);
+        request.setAttribute("usersList",usersList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/search.jsp");
+        requestDispatcher.forward(request,response);
     }
 
     private void deleteUsers(HttpServletRequest request, HttpServletResponse response) throws IOException {

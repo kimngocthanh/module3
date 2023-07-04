@@ -17,16 +17,16 @@
     <input type="text" name="country" id="country">
     <input type="submit" value="Tìm kiếm">
     <table border="1">
-        <tr>
-            <th>Tên</th>
-            <th>email</th>
-            <th>country</th>
-        </tr>
-        <c:forEach var ="c" items ="${usersList}">
+        <c:forEach var="c" items="${usersList}">
             <tr>
-                <td><c:out value="${c.name}"/></td>
-                <td><c:out value="${c.email}"/></td>
-                <td><c:out value="${c.country}"/></td>
+                <th>Tên</th>
+                <th>email</th>
+                <th>country</th>
+            </tr>
+            <tr>
+                <td><c:out value="${c.getName()}"/></td>
+                <td><c:out value="${c.geEmail()}"/></td>
+                <td><c:out value="${c.getCountry()}"/></td>
             </tr>
         </c:forEach>
     </table>

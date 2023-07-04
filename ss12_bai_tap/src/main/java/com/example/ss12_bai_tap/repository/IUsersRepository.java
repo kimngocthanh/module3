@@ -11,4 +11,5 @@ public interface IUsersRepository {
     void edit(int id,Users users);
     void delete(int id);
     List<Users> search(String country);
+    List<Users> sort();
 }
